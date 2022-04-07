@@ -1,4 +1,7 @@
 # :page_facing_up: relatório do código
+
+[<img src="https://i.ibb.co/kQc8kwT/eu.png" width="35" style="border-radius:50%">](https://corqueeuvia.github.io)
+[![linkedin: corcoviacaique](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/corcoviacaique/)   [![gitHub corqueeuvia](https://img.shields.io/github/followers/corqueeuvia?label=follow&style=for-the-badge)](https://github.com/corqueeuvia)
 ### tudo sobre o processo de criação :brain:
 
 :dart: **a meta:** criar uma `função` que retorne o id do funcionário que atende o maior número de clientes
@@ -22,7 +25,17 @@ comecei tirando de cena os funcionários de folga para designar clientes apenas 
 
 tive problemas usando o `for` porque o return encerrava o laço, mas não pude criar a variável fora e dar o `.push()` dentro do for porque o `.filter()` precisava de um retorno verdadeiro ou falso
 
-[o resultado foi esse](https://jsfiddle.net/y09pf426/)
+[o resultado foi esse](https://jsfiddle.net/y09pf426/) *(dica pra visualizar melhor na caixa abaixo:)*
+
+> 1. em **Settings** selecione o *layout*  em abas (colunas) → **Tabs (columns)**
+> 
+> 2. em seguida, desabilite e habilite novamente a exibição do console no editor → **console in the editor**
+> 
+> clique em qualquer logar fora do menu para fechá-lo
+> 
+> veja o código na aba **JavaScript**
+> 
+> <a href="https://ibb.co/rphgpPZ"><img src="https://i.ibb.co/vdWbd5J/js-fiddle.png"></a>
 
 enviei para meus amigos e um deles me mostrou como resolver usando `.find()` no lugar do `for`:
 
@@ -102,7 +115,7 @@ fui verificar o que o teste esperava de mim e ele esperava um retorno 999, que �
 
 fiquei confuso e perguntei para a carolina se era um erro do teste ou uma pegadinha que eu não estava enxergando, mas ela obviamente me disse que esse tipo de reposta seria injusta com outras pessoas concorrendo à vaga, então voltei a analisar o enunciado e tentar resolver o erro deste último cenário.
 
-#### falha minha, falha nossa? :see_no_evil: :hear_no_evil: :speak_no_evil:
+### falha minha, falha nossa? :see_no_evil: :hear_no_evil: :speak_no_evil:
 > eu poderia estar errado e ter entendido mal a parte de abstenções
 > talvez o enunciado só tivesse mencionado os funcionários de folga para que não fosse feita nenhuma designação SOMENTE no caso de mais da metade deles estar de folga, mas que para fins de análise do balanceamento de CS os funcionários de folga pudessem ser inclusos na designação, apenas a fim de saber qual nível de CS está sendo mais requisitado
 > nope. removi a parte da função que cria `availableEmployees` e mantive apenas a parte que os ordena crescentemente em função do score, mas isso gerou erro nos cenários 1 e 3. e no cenário 1 é muito fácil observar o *output* desejado, então descartei essa hipótese
