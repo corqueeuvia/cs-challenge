@@ -10,11 +10,13 @@ function customerSuccessBalancing(customerSuccess, customers, customerSuccessAwa
     if (!customerSuccessAway.find(employeeAway => employeeAway === employee.id)) return true;
   });
 
+  const customersCopy = customers;
   availableEmployees.forEach((employee) => {
     employee.clients = [];
-    for (let j = 0; j < customers.length; j++) {
-      if (employee.score >= customers[j].score) {
-        employee.clients.push(customers[j].id);
+    for (let j = 0; j < customersCopy.length; j++) {
+      if (employee.score >= customersCopy[j].score) {
+        employee.clients.push(customersCopy[j].id);
+        customersCopy[j].score = 100000;
       }
     }
   });
