@@ -6,12 +6,22 @@
  */
 
 function customerSuccessBalancing(customerSuccess, customers, customerSuccessAway) {
-  let availableEmployees = customerSuccess.filter((employee) => {
+  const availableEmployees = customerSuccess.filter((employee) => {
     if (!customerSuccessAway.find(employeeAway => employeeAway === employee.id)) return true;
   });
 
+  const availableEmployeesAscending = availableEmployees.sort((a, b) => {
+    if (a.score > b.score) {
+      return 1;
+    } else if (a.score < b.score) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+
   const customersCopy = customers;
-  availableEmployees.forEach((employee) => {
+  availableEmployeesAscending.forEach((employee) => {
     employee.clients = [];
     for (let j = 0; j < customersCopy.length; j++) {
       if (employee.score >= customersCopy[j].score) {
