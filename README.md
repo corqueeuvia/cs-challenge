@@ -115,7 +115,7 @@ fui verificar o que o teste esperava de mim e ele esperava um retorno 999, que �
 
 fiquei confuso e perguntei para a carolina se era um erro do teste ou uma pegadinha que eu não estava enxergando, mas ela obviamente me disse que esse tipo de reposta seria injusta com outras pessoas concorrendo à vaga, então voltei a analisar o enunciado e tentar resolver o erro deste último cenário.
 
-### falha minha, falha nossa? :see_no_evil: :hear_no_evil: :speak_no_evil:
+## falha minha, falha nossa? :see_no_evil: :hear_no_evil: :speak_no_evil: (conclusão)
 > eu poderia estar errado e ter entendido mal a parte de abstenções
 > talvez o enunciado só tivesse mencionado os funcionários de folga para que não fosse feita nenhuma designação SOMENTE no caso de mais da metade deles estar de folga, mas que para fins de análise do balanceamento de CS os funcionários de folga pudessem ser inclusos na designação, apenas a fim de saber qual nível de CS está sendo mais requisitado
 > nope. removi a parte da função que cria `availableEmployees` e mantive apenas a parte que os ordena crescentemente em função do score, mas isso gerou erro nos cenários 1 e 3. e no cenário 1 é muito fácil observar o *output* desejado, então descartei essa hipótese
