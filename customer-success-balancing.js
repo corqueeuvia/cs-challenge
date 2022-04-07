@@ -21,7 +21,17 @@ function customerSuccessBalancing(customerSuccess, customers, customerSuccessAwa
     }
   });
 
-  return availableEmployees;
+  const csWithMostClients = availableEmployeesAscending.reduce((previous, current) => {
+    if (previous.clients.length > current.clients.length) {
+      return previous.id;
+    } else if (previous.clients.length == current.clients.length) {
+      return 0;
+    } else {
+      return current.id;
+    }
+  });
+
+  return csWithMostClients;
 
 }
 
