@@ -6,8 +6,12 @@
  */
 
 function customerSuccessBalancing(customerSuccess, customers, customerSuccessAway) {
+  let availableEmployees = customerSuccess.filter((employee) => {
+    if (!customerSuccessAway.find(employeeAway => employeeAway === employee.id)) return true;
+  });
 
-  
+  return availableEmployees;
+
 }
 
 test("Scenario 1", () => {
