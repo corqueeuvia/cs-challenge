@@ -62,7 +62,7 @@ usei um `.reduce()` na minha lista de funcionários para chegar àquele com maio
 
 [o resultado era esse](https://jsfiddle.net/jkob5hmc/)
 
-pensei que o problema poderia ser como as funções retornavam os dados, então testei todas elas e analisei seus retornos com amostras iguais as dos cenários de teste. não era esse o problema.
+pensei que o problema poderia ser como as funções retornavam os dados, então testei todas elas e analisei seus retornos com amostras iguais às dos cenários de teste. não era esse o problema.
 
 pensei que o problema poderia ser o `if else if` encadeado dentro do `reduce`, mas não encontrei nada que validasse essa ideia. fiz também testes trocando por um `if`ternário e, apesar de não ter mais o mesmo erro, não conseguia satisfazer a condição em que dois funcionários tivessem o maior número de clientes (para retornar 0).
 
