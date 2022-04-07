@@ -23,15 +23,15 @@ function customerSuccessBalancing(customerSuccess, customers, customerSuccessAwa
 
   const csWithMostClients = availableEmployeesAscending.reduce((previous, current) => {
     if (previous.clients.length > current.clients.length) {
-      return previous.id;
+      return previous;
     } else if (previous.clients.length == current.clients.length) {
-      return 0;
+      return {id: 0, clients: current.clients};
     } else {
-      return current.id;
+      return current;
     }
   });
 
-  return csWithMostClients;
+  return csWithMostClients.id;
 
 }
 
