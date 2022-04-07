@@ -6,43 +6,50 @@
  */
 
 function customerSuccessBalancing(customerSuccess, customers, customerSuccessAway) {
-  const availableEmployees = customerSuccess.filter((employee) => {
-    if (!customerSuccessAway.find(employeeAway => employeeAway === employee.id)) return true;
-  });
 
-  const availableEmployeesAscending = availableEmployees.sort((a, b) => {
-    if (a.score > b.score) {
-      return 1;
-    } else if (a.score < b.score) {
-      return -1;
-    } else {
-      return 0;
-    }
-  });
+  const vacayLimit = Math.floor(customerSuccess.length / 2);
+  let csWithMostClients = {};
 
-  const customersCopy = customers;
-  availableEmployeesAscending.forEach((employee) => {
-    employee.clients = [];
-    for (let j = 0; j < customersCopy.length; j++) {
-      if (employee.score >= customersCopy[j].score) {
-        employee.clients.push(customersCopy[j].id);
-        customersCopy[j].score = 100000; //this is the EVIL line that bugged my brain!
+  if (customerSuccessAway.length > vacayLimit) {
+    return `You can't have more than ${vacayLimit} employees away!`;
+
+  } else {
+    const availableEmployees = customerSuccess.filter((employee) => {
+      if (!customerSuccessAway.find(employeeAway => employeeAway === employee.id)) return true;
+    });
+  
+    const availableEmployeesAscending = availableEmployees.sort((a, b) => {
+      if (a.score > b.score) {
+        return 1;
+      } else if (a.score < b.score) {
+        return -1;
+      } else {
+        return 0;
       }
-    }
-  });
-
-  const csWithMostClients = availableEmployeesAscending.reduce((previous, current) => {
-    if (previous.clients.length > current.clients.length) {
-      return previous;
-    } else if (previous.clients.length == current.clients.length) {
-      return {id: 0, clients: current.clients};
-    } else {
-      return current;
-    }
-  });
-
+    });
+  
+    const customersCopy = customers;
+    availableEmployeesAscending.forEach((employee) => {
+      employee.clients = [];
+      for (let j = 0; j < customersCopy.length; j++) {
+        if (employee.score >= customersCopy[j].score) {
+          employee.clients.push(customersCopy[j].id);
+          customersCopy[j].score = 100000; //this is the EVIL line that bugged my brain!
+        }
+      }
+    });
+  
+    csWithMostClients = availableEmployeesAscending.reduce((previous, current) => {
+      if (previous.clients.length > current.clients.length) {
+        return previous;
+      } else if (previous.clients.length == current.clients.length) {
+        return {id: 0, clients: current.clients};
+      } else {
+        return current;
+      }
+    });
+  }
   return csWithMostClients.id;
-
 }
 
 test("Scenario 1", () => {
