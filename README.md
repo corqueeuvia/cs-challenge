@@ -52,9 +52,9 @@ mais uma vez contei com a ajuda do meu amigo, mas não chegamos a um bom resulta
 
 depois de cada "match", fui alterando o score do cliente que já havia sido designado para um número **maior** do que o maior score possível dos meus funcionários (100.000), assim ele não satisfaria a condição novamente para outro funcionário.
 
-	:warning: *spoiler alert: um micro deslize nessa etapa gerou um erro grave depois, que levei um certo tempo para diagnosticar!*
+:warning: *spoiler alert: um micro deslize nessa etapa gerou um erro grave depois, que levei um certo tempo para diagnosticar!*
 
-[o resultado foi esse](https://jsfiddle.net/qsL738xh/)
+[o resultado foi esse](https://jsfiddle.net/4zf7tguw/)
 
 ### `contando os clientes dos CSs:` :abacus:
 
