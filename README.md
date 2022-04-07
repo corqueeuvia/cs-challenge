@@ -17,7 +17,7 @@
 * valor máximo de t = n/2 arredondado para baixo
 
 ## :gear: o processo
-### `filtrando os CSs disponíveis:` 
+### `filtrando os CSs disponíveis:` :balance_scale:
 comecei tirando de cena os funcionários de folga para designar clientes apenas aos disponíveis.
 
 tive problemas usando o `for` porque o return encerrava o laço, mas não pude criar a variável fora e dar o `.push()` dentro do for porque o `.filter()` precisava de um retorno verdadeiro ou falso
@@ -28,7 +28,7 @@ enviei para meus amigos e um deles me mostrou como resolver usando `.find()` no 
 
 `if (!csAway.find(element => element === employee.id)) return true;`
 
-### `designando clientes aos CSs:`
+### `designando clientes aos CSs:` 	:family_woman_woman_girl_girl::family_man_man_boy_boy:
 criei uma propriedade `clients` para cada CS disponível recebendo um `array` vazio, onde eu poderia inserir os ids dos clientes que ele fosse atender para, no final, contar quantos clientes cada CS tem
 
 consegui fazer a verificação de `scoreCS >= scoreCliente`, mas o mesmo cliente estava sendo designado para mais de um CS
@@ -39,11 +39,11 @@ mais uma vez contei com a ajuda do meu amigo, mas não chegamos a um bom resulta
 
 depois de cada "match", fui alterando o score do cliente que já havia sido designado para um número **maior** do que o maior score possível dos meus funcionários (100.000), assim ele não satisfaria a condição novamente para outro funcionário.
 
-*spoiler alert: um micro deslize nessa etapa gerou um erro grave depois, que levei um certo tempo para diagnosticar!*
+	:warning: *spoiler alert: um micro deslize nessa etapa gerou um erro grave depois, que levei um certo tempo para diagnosticar!*
 
 [o resultado foi esse](https://jsfiddle.net/qsL738xh/)
 
-### `contando os clientes dos CSs:`
+### `contando os clientes dos CSs:` :abacus:
 
 usei um `.reduce()` na minha lista de funcionários para chegar àquele com maior número de clientes designados, mas comecei a ter problemas quando usava as funções geradoras de dados, só passava no cenário 1
 
@@ -59,7 +59,7 @@ por isso meu erro era `can't read length poperty of null`! como pode ver na [lin
 
 depois disso funcionou! estava conseguindo contar meus clientes, mas ainda não estava tendo os resultados esperados pelo programa...
 
-### `debugando os cenários`
+### `debugando os cenários` :bug:
 a essa altura eu estava com erro em 2 cenários: 3 e 7.
 
 o cenário 3 é covardemente imenso, então comecei pelo 7.
@@ -89,7 +89,7 @@ esta inocente linha 57 (naquela versão) atrapalhava a comparação dos scores p
 
 corrigido um ponto (literal) faltava só um ponto: cenário 5
 
-### `o cenário 5`
+### `o cenário 5` :dragon_face:
 finalmente tomei um tempo para olhar para o erro do cenário 5, que tem um grande volume de dados...
 
 a primeira coisa que percebi foi que todos os 10.000 clientes estavam sendo designados a um único funcionário, então fui investigar o motivo.
@@ -102,18 +102,18 @@ fui verificar o que o teste esperava de mim e ele esperava um retorno 999, que �
 
 fiquei confuso e perguntei para a carolina se era um erro do teste ou uma pegadinha que eu não estava enxergando, mas ela obviamente me disse que esse tipo de reposta seria injusta com outras pessoas concorrendo à vaga, então voltei a analisar o enunciado e tentar resolver o erro deste último cenário.
 
-#### falha minha, falha nossa?
+#### falha minha, falha nossa? :see_no_evil: :hear_no_evil: :speak_no_evil:
 > eu poderia estar errado e ter entendido mal a parte de abstenções
 > talvez o enunciado só tivesse mencionado os funcionários de folga para que não fosse feita nenhuma designação SOMENTE no caso de mais da metade deles estar de folga, mas que para fins de análise do balanceamento de CS os funcionários de folga pudessem ser inclusos na designação, apenas a fim de saber qual nível de CS está sendo mais requisitado
 > nope. removi a parte da função que cria `availableEmployees` e mantive apenas a parte que os ordena crescentemente em função do score, mas isso gerou erro nos cenários 1 e 3. e no cenário 1 é muito fácil observar o *output* desejado, então descartei essa hipótese
 > 
 > **os funcionários de folga realmente deveriam ser desconsiderados da atribuição**
 >
-> enfim, entrego meu desafio concluído sem satisfazer o cenário 3, porém, gostaria muito de saber se o teste está realmente esperando um reasultado impossível e, caso não, onde está a falha da minha lógica ou interpretação que possibilita fazer da forma correta
+> enfim, entrego meu desafio concluído sem satisfazer o cenário 3, porém, gostaria muito de saber se o teste está realmente esperando um reasultado impossível e, caso não, onde está a falha da minha lógica ou interpretação que possibilita fazer da forma correta 	:slightly_smiling_face:
 
-## agradecimentos
-* sempre à minha noiva, [sarah](https://www.linkedin.com/in/sarahnani/), em primeiro lugar: por estar ao meu lado e ser todo o suporte que preciso nas minhas empreitadas e por conversar sobre meus códigos para trazer uma nova perspectiva
-* depois à [carolina](https://www.linkedin.com/in/carolinasilvagc/) da rd, que tratou do meu caso atípico com muita atenção e sempre disposta a ajudar
-* também ao meu amigo, [rodrigo](https://www.linkedin.com/in/rodrigozaum/), citado no relatório: um ser humano GIGANTE de humanidade, com uma inteligência ainda maior!
-*  ao meu professor [fábio](https://www.linkedin.com/in/fabio1990henrique/), que em 6 meses me tirou de zero JS até este ponto em que me encontro e está sempre disposto a debugar e ajudar quem quer que tenha curiosidade o suficiente pra encarar algo que não sabe ainda
+## agradecimentos :smiling_face_with_three_hearts:
+* :1st_place_medal: sempre à minha noiva, [sarah](https://www.linkedin.com/in/sarahnani/), em primeiro lugar: por estar ao meu lado e ser todo o suporte que preciso nas minhas empreitadas e por conversar sobre meus códigos para trazer uma nova perspectiva
+* :2nd_place_medal: depois à [carolina](https://www.linkedin.com/in/carolinasilvagc/) da rd, que tratou do meu caso atípico com muita atenção e sempre disposta a ajudar
+* :3rd_place_medal: também ao meu amigo, [rodrigo](https://www.linkedin.com/in/rodrigozaum/), citado no relatório: um ser humano GIGANTE de humanidade, com uma inteligência ainda maior!
+* :medal_sports: ao meu professor [fábio](https://www.linkedin.com/in/fabio1990henrique/), que em 6 meses me tirou de zero JS até este ponto em que me encontro e está sempre disposto a debugar e ajudar quem quer que tenha curiosidade o suficiente pra encarar algo que não sabe ainda
 
