@@ -10,6 +10,15 @@ function customerSuccessBalancing(customerSuccess, customers, customerSuccessAwa
     if (!customerSuccessAway.find(employeeAway => employeeAway === employee.id)) return true;
   });
 
+  availableEmployees.forEach((employee) => {
+    employee.clients = [];
+    for (let j = 0; j < customers.length; j++) {
+      if (employee.score >= customers[j].score) {
+        employee.clients.push(customers[j].id);
+      }
+    }
+  });
+
   return availableEmployees;
 
 }
