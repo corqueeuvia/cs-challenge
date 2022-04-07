@@ -16,7 +16,7 @@ function customerSuccessBalancing(customerSuccess, customers, customerSuccessAwa
     for (let j = 0; j < customersCopy.length; j++) {
       if (employee.score >= customersCopy[j].score) {
         employee.clients.push(customersCopy[j].id);
-        customersCopy[j].score = 100000;
+        customersCopy[j].score = 100000; //this is the EVIL line that bugged my brain!
       }
     }
   });
