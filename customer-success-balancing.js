@@ -18,15 +18,7 @@ function customerSuccessBalancing(customerSuccess, customers, customerSuccessAwa
       if (!customerSuccessAway.find(employeeAway => employeeAway === employee.id)) return true;
     });
   
-    const availableEmployeesAscending = availableEmployees.sort((a, b) => {
-      if (a.score > b.score) {
-        return 1;
-      } else if (a.score < b.score) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
+    const availableEmployeesAscending = availableEmployees.sort((a, b) => a.score - b.score);
   
     const customersCopy = customers;
     availableEmployeesAscending.forEach((employee) => {
